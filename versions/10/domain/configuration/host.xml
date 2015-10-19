@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<host xmlns="urn:jboss:domain:4.0" name="master">
+<host xmlns="urn:jboss:domain:5.0" name="master">
     <extensions>
         <extension module="org.jboss.as.jmx"/>
     </extensions>
@@ -48,7 +48,8 @@
             <native-interface security-realm="ManagementRealm">
                 <socket interface="management" port="${jboss.management.native.port:9999}"/>
             </native-interface>
-            <http-interface security-realm="ManagementRealm" http-upgrade-enabled="true">
+            <http-interface security-realm="ManagementRealm">
+                <http-upgrade enabled="true"/>
                 <socket interface="management" port="${jboss.management.http.port:9990}"/>
             </http-interface>
         </management-interfaces>

@@ -165,6 +165,22 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
+            <xs:element name="configuration-changes" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation>
+                        Configuration for the history of configuration changes.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:attribute name="max-history" type="xs:integer" use="optional" default="10">
+                        <xs:annotation>
+                            <xs:documentation>
+                                Number of configuration changes that are available in history.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="security-realms" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence>
@@ -478,8 +494,8 @@
                             
                             At the time authentication is going to be handled the keytab will be selected as follows: -
                              1 - Iterate the list of keytabs and identity one where the for-hosts attribute contains an entry matching protocol/hostname.
-                             2 - Iterate the list of keytabs and identity one where the for-hosts attribute contains an entry matching hostname.
-                             3 - Iterate the list of keytabs and identify one where the name of the principal matches matches protocol/hostname.
+                             2 - Iterate the list of keytabs and identify one where the name of the principal matches matches protocol/hostname.
+                             3 - Iterate the list of keytabs and identity one where the for-hosts attribute contains an entry matching hostname.
                              4 - Iterate the list of keytabs and identify one where the hostname portion of the principal matches the hostname of the request.
                              5 - Use the keytab where for-hosts is set to '*'.
                               
@@ -1477,6 +1493,29 @@
             <xs:element name="size-rotating-file-handler" type="size-rotating-file-audit-log-handlerType"/>
             <xs:element name="periodic-rotating-file-handler" type="periodic-rotating-file-audit-log-handlerType"/>
             <xs:element name="syslog-handler" type="syslog-audit-log-handlerType"/>
+            <xs:element name="in-memory-handler">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>
+                            Configuration of a in memory handler for the audit log.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:attribute name="name" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>
+                                The name of the handler. The name must be unique across all types of handler.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="max-history" type="xs:integer" default="10">
+                        <xs:annotation>
+                            <xs:documentation>
+                                The number of logging entries stored in memory.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
         </xs:choice>
     </xs:complexType>
 
@@ -1956,23 +1995,9 @@
     </xs:complexType>
 
     <xs:complexType name="management-interfaceType">
-        <xs:attribute name="security-domain" type="xs:string" use="optional">
-            <xs:annotation>
-                <xs:documentation>
-                    Reference to the security domain that has the security settings to secure
-                    this management interface.
-
-                    Only one of security-realm and security-domain should be specified at the same time.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
         <xs:attribute name="security-realm" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Deprecated - security domains are how this is achieved now.
-
-                    Only one of security-realm and security-domain should be specified at the same time.
-
                     The security realm to use for this management interface, the capabilities
                     of the security realm will be queried to identify the authentication mechanism(s) to
                     offer.
@@ -2312,11 +2337,17 @@
         </xs:attribute>
         <xs:attribute name="security-realm" type="xs:string" use="optional" />
         <xs:attribute name="username" type="xs:string" use="optional" />
-        <xs:attribute name="ignore-unused-configuration" type="xs:boolean" default="false">
+        <xs:attribute name="ignore-unused-configuration" type="xs:boolean" use="optional">
             <xs:annotation>
                 <xs:documentation>
-                    Set to true to instruct the master Host Controller to automatically not forward configuration and
+                    When set to true, this instructs the master Host Controller to not forward configuration and
                     operations for profiles, socket binding groups and server groups which do not affect our servers.
+                    Setting to false will ensure that all of this configuration information is copied. Note that using
+                    the '--backup' startup option on the command line will set this to false if the value is unspecified
+                    in host.xml. If the value is specified in host.xml, then using '--backup' will not override the
+                    specified value (for example: setting ignore-unused-configuration="true" and using --backup will
+                    not override the value of ignore-unused-configuration, which will remain true). If --backup is not
+                    used, this value will be true at runtime.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>

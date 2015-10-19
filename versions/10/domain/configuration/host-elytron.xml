@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<host xmlns="urn:jboss:domain:4.0" name="master">
+<host xmlns="urn:jboss:domain:5.0" name="master">
     <extensions>
         <extension module="org.jboss.as.jmx"/>
         <extension module="org.wildfly.extension.elytron"/>
@@ -49,7 +49,8 @@
             <native-interface security-realm="ManagementRealm">
                 <socket interface="management" port="${jboss.management.native.port:9999}"/>
             </native-interface>
-            <http-interface security-realm="ManagementRealm" http-upgrade-enabled="true">
+            <http-interface http-server-authentication="management-http-authentication" security-realm="ManagementRealm">
+                <http-upgrade enabled="true"/>
                 <socket interface="management" port="${jboss.management.http.port:9990}"/>
             </http-interface>
         </management-interfaces>
@@ -128,6 +129,14 @@
                     <groups-properties path="mgmt-groups.properties" relative-to="jboss.domain.config.dir"/>
                 </properties-realm>
             </security-realms>
+            <http>
+                <http-server-authentication name="management-http-authentication" http-server-factory="global" security-domain="ManagementDomain"/>
+                <provider-http-server-factory name="global"/>
+            </http>
+            <sasl>
+                <sasl-server-authentication name="management-sasl-authentication" sasl-server-factory="global" security-domain="ManagementDomain"/>
+                <provider-sasl-server-factory name="global"/>
+            </sasl>
         </subsystem>
     </profile>
 </host>

@@ -29,8 +29,8 @@
     </properties>
 
     <resources>
-        <resource-root path="picketbox-5.0.0.Alpha1.jar"/>
-        <resource-root path="picketbox-infinispan-5.0.0.Alpha1.jar"/>
+        <resource-root path="picketbox-5.0.0.Alpha2.jar"/>
+        <resource-root path="picketbox-infinispan-5.0.0.Alpha2.jar"/>
         <resource-root path="picketbox-commons-1.0.0.final.jar"/>
     </resources>
 

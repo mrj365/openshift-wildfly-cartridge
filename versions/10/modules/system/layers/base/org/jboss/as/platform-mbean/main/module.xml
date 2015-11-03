@@ -32,7 +32,7 @@
     </exports>
 
     <resources>
-        <resource-root path="wildfly-platform-mbean-2.0.0.CR7-Elytron1.jar"/>
+        <resource-root path="wildfly-platform-mbean-2.0.0.CR9-Elytron1.jar"/>
     </resources>
 
     <dependencies>

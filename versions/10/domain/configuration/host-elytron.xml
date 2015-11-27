@@ -130,7 +130,13 @@
                 </properties-realm>
             </security-realms>
             <http>
-                <http-server-authentication name="management-http-authentication" http-server-factory="global" security-domain="ManagementDomain"/>
+                <http-server-authentication name="management-http-authentication" http-server-factory="global" security-domain="ManagementDomain">
+                    <mechanism-configuration>
+                        <mechanism mechanism-name="BASIC">
+                            <mechanism-realm realm-name="Management Realm"/>
+                        </mechanism>
+                    </mechanism-configuration>
+                </http-server-authentication>
                 <provider-http-server-factory name="global"/>
             </http>
             <sasl>

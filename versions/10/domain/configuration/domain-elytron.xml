@@ -286,7 +286,13 @@
                     </properties-realm>
                 </security-realms>
                 <http>
-                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain"/>
+                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
+                        <mechanism-configuration>
+                            <mechanism mechanism-name="BASIC">
+                                <mechanism-realm realm-name="Application Realm"/>
+                            </mechanism>
+                        </mechanism-configuration>
+                    </http-server-authentication>
                     <provider-http-server-factory name="global"/>
                 </http>
                 <sasl>
@@ -635,7 +641,13 @@
                     </properties-realm>
                 </security-realms>
                 <http>
-                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain"/>
+                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
+                        <mechanism-configuration>
+                            <mechanism mechanism-name="BASIC">
+                                <mechanism-realm realm-name="Application Realm"/>
+                            </mechanism>
+                        </mechanism-configuration>
+                    </http-server-authentication>
                     <provider-http-server-factory name="global"/>
                 </http>
                 <sasl>
@@ -987,7 +999,13 @@
                     </properties-realm>
                 </security-realms>
                 <http>
-                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain"/>
+                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
+                        <mechanism-configuration>
+                            <mechanism mechanism-name="BASIC">
+                                <mechanism-realm realm-name="Application Realm"/>
+                            </mechanism>
+                        </mechanism-configuration>
+                    </http-server-authentication>
                     <provider-http-server-factory name="global"/>
                 </http>
                 <sasl>
@@ -1374,7 +1392,13 @@
                     </properties-realm>
                 </security-realms>
                 <http>
-                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain"/>
+                    <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
+                        <mechanism-configuration>
+                            <mechanism mechanism-name="BASIC">
+                                <mechanism-realm realm-name="Application Realm"/>
+                            </mechanism>
+                        </mechanism-configuration>
+                    </http-server-authentication>
                     <provider-http-server-factory name="global"/>
                 </http>
                 <sasl>

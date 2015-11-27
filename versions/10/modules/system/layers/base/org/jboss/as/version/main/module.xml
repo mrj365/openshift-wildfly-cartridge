@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="wildfly-version-2.0.0.CR9-Elytron1.jar"/>
+        <resource-root path="wildfly-version-2.0.2.Final-Elytron1.jar"/>
     </resources>
 
     <dependencies>

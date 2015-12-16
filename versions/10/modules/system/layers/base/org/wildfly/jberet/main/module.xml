@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="wildfly-jberet-10.0.0.CR5-Elytron3.jar"/>
+        <resource-root path="wildfly-jberet-10.0.0.CR5-Elytron5.jar"/>
     </resources>
 
     <dependencies>

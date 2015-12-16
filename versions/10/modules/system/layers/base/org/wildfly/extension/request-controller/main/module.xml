@@ -34,7 +34,7 @@
     </exports>
 
     <resources>
-        <resource-root path="wildfly-request-controller-2.0.2.Final-Elytron1.jar"/>
+        <resource-root path="wildfly-request-controller-2.0.5.Final-Elytron1.jar"/>
     </resources>
 
     <dependencies>

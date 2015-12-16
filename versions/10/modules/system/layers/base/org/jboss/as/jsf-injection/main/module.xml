@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="wildfly-jsf-injection-10.0.0.CR5-Elytron3.jar"/>
+        <resource-root path="wildfly-jsf-injection-10.0.0.CR5-Elytron5.jar"/>
         <resource-root path="weld-core-jsf-2.3.1.Final.jar"/>
     </resources>
 

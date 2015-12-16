@@ -273,7 +273,7 @@
             <subsystem xmlns="urn:jboss:domain:resource-adapters:4.0"/>
             <subsystem xmlns="urn:jboss:domain:request-controller:1.0"/>
             <subsystem xmlns="urn:jboss:domain:sar:1.0"/>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -601,7 +601,7 @@
             <subsystem xmlns="urn:jboss:domain:resource-adapters:4.0"/>
             <subsystem xmlns="urn:jboss:domain:request-controller:1.0"/>
             <subsystem xmlns="urn:jboss:domain:sar:1.0"/>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -939,7 +939,7 @@
             <subsystem xmlns="urn:jboss:domain:resource-adapters:4.0"/>
             <subsystem xmlns="urn:jboss:domain:request-controller:1.0"/>
             <subsystem xmlns="urn:jboss:domain:sar:1.0"/>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -1305,7 +1305,7 @@
             <subsystem xmlns="urn:jboss:domain:resource-adapters:4.0"/>
             <subsystem xmlns="urn:jboss:domain:request-controller:1.0"/>
             <subsystem xmlns="urn:jboss:domain:sar:1.0"/>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>

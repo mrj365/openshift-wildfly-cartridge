@@ -29,7 +29,7 @@
     </exports>
 
     <resources>
-        <resource-root path="wildfly-undertow-10.0.0.CR5-Elytron3.jar"/>
+        <resource-root path="wildfly-undertow-10.0.0.CR5-Elytron5.jar"/>
     </resources>
 
     <dependencies>
@@ -58,6 +58,7 @@
         <module name="org.jboss.as.network"/>
         <module name="org.jboss.as.security"/>
         <module name="org.wildfly.security.elytron"/>
+        <module name="org.wildfly.security.elytron-web.undertow-server"/>
         <module name="org.jboss.as.server"/>
         <module name="org.jboss.as.threads"/>
         <module name="org.jboss.common-beans" services="import"/>

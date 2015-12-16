@@ -120,7 +120,7 @@
         <subsystem xmlns="urn:wildfly:elytron:1.0">
             <security-domains>
                 <security-domain name="ManagementDomain" default-realm="ManagementRealm">
-                    <realm name="ManagementRealm"/>
+                    <realm name="ManagementRealm" role-decoder="groups-to-roles"/>
                 </security-domain>
             </security-domains>
             <security-realms>
@@ -129,6 +129,9 @@
                     <groups-properties path="mgmt-groups.properties" relative-to="jboss.domain.config.dir"/>
                 </properties-realm>
             </security-realms>
+            <mappers>
+                <simple-role-decoder name="groups-to-roles" attribute="groups"/>
+            </mappers>
             <http>
                 <http-server-authentication name="management-http-authentication" http-server-factory="global" security-domain="ManagementDomain">
                     <mechanism-configuration>

@@ -171,7 +171,9 @@
                         <keepalive-time time="100" unit="milliseconds"/>
                     </thread-pool>
                 </thread-pools>
-                <default-security-domain value="other"/>
+                <security-domains default="ApplicationDomain">
+                    <security-domain name="ApplicationDomain"/>
+                </security-domains>
                 <default-missing-method-permissions-deny-access value="true"/>
                 <log-system-exceptions value="true"/>
             </subsystem>
@@ -276,7 +278,7 @@
             <subsystem xmlns="urn:wildfly:elytron:1.0">
                 <security-domains>
                     <security-domain name="ApplicationDomain" default-realm="ApplicationRealm">
-                        <realm name="ApplicationRealm"/>
+                        <realm name="ApplicationRealm" role-decoder="groups-to-roles"/>
                     </security-domain>
                 </security-domains>
                 <security-realms>
@@ -285,6 +287,9 @@
                         <groups-properties path="application-roles.properties" relative-to="jboss.domain.config.dir"/>
                     </properties-realm>
                 </security-realms>
+                <mappers>
+                    <simple-role-decoder name="groups-to-roles" attribute="groups"/>
+                </mappers>
                 <http>
                     <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
                         <mechanism-configuration>
@@ -300,7 +305,7 @@
                     <provider-sasl-server-factory name="global"/>
                 </sasl>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -360,6 +365,9 @@
                     <response-header name="server-header" header-name="Server" header-value="WildFly/10"/>
                     <response-header name="x-powered-by-header" header-name="X-Powered-By" header-value="Undertow/1"/>
                 </filters>
+                <application-security-domains>
+                    <application-security-domain security-domain="other" http-authentication-factory="application-http-authentication"/>
+                </application-security-domains>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:webservices:2.0">
                 <wsdl-host>${jboss.bind.address:127.0.0.1}</wsdl-host>
@@ -461,7 +469,7 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:ejb3:5.0">
                 <session-bean>
-                    <stateful default-access-timeout="5000" cache-ref="distributable" passivation-disabled-cache-ref="simple"/>
+                    <stateful default-access-timeout="5000" cache-ref="simple" passivation-disabled-cache-ref="simple"/>
                     <stateless>
                         <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
                     </stateless>
@@ -494,7 +502,9 @@
                         <keepalive-time time="100" unit="milliseconds"/>
                     </thread-pool>
                 </thread-pools>
-                <default-security-domain value="other"/>
+                <security-domains default="ApplicationDomain">
+                    <security-domain name="ApplicationDomain"/>
+                </security-domains>
                 <default-missing-method-permissions-deny-access value="true"/>
                 <log-system-exceptions value="true"/>
             </subsystem>
@@ -631,7 +641,7 @@
             <subsystem xmlns="urn:wildfly:elytron:1.0">
                 <security-domains>
                     <security-domain name="ApplicationDomain" default-realm="ApplicationRealm">
-                        <realm name="ApplicationRealm"/>
+                        <realm name="ApplicationRealm" role-decoder="groups-to-roles"/>
                     </security-domain>
                 </security-domains>
                 <security-realms>
@@ -640,6 +650,9 @@
                         <groups-properties path="application-roles.properties" relative-to="jboss.domain.config.dir"/>
                     </properties-realm>
                 </security-realms>
+                <mappers>
+                    <simple-role-decoder name="groups-to-roles" attribute="groups"/>
+                </mappers>
                 <http>
                     <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
                         <mechanism-configuration>
@@ -655,7 +668,7 @@
                     <provider-sasl-server-factory name="global"/>
                 </sasl>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -716,6 +729,9 @@
                     <response-header name="server-header" header-name="Server" header-value="WildFly/10"/>
                     <response-header name="x-powered-by-header" header-name="X-Powered-By" header-value="Undertow/1"/>
                 </filters>
+                <application-security-domains>
+                    <application-security-domain security-domain="other" http-authentication-factory="application-http-authentication"/>
+                </application-security-domains>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:webservices:2.0">
                 <wsdl-host>${jboss.bind.address:127.0.0.1}</wsdl-host>
@@ -855,7 +871,9 @@
                     </thread-pool>
                 </thread-pools>
                 <iiop enable-by-default="false" use-qualified-name="false"/>
-                <default-security-domain value="other"/>
+                <security-domains default="ApplicationDomain">
+                    <security-domain name="ApplicationDomain"/>
+                </security-domains>
                 <default-missing-method-permissions-deny-access value="true"/>
                 <log-system-exceptions value="true"/>
             </subsystem>
@@ -989,7 +1007,7 @@
             <subsystem xmlns="urn:wildfly:elytron:1.0">
                 <security-domains>
                     <security-domain name="ApplicationDomain" default-realm="ApplicationRealm">
-                        <realm name="ApplicationRealm"/>
+                        <realm name="ApplicationRealm" role-decoder="groups-to-roles"/>
                     </security-domain>
                 </security-domains>
                 <security-realms>
@@ -998,6 +1016,9 @@
                         <groups-properties path="application-roles.properties" relative-to="jboss.domain.config.dir"/>
                     </properties-realm>
                 </security-realms>
+                <mappers>
+                    <simple-role-decoder name="groups-to-roles" attribute="groups"/>
+                </mappers>
                 <http>
                     <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
                         <mechanism-configuration>
@@ -1013,7 +1034,7 @@
                     <provider-sasl-server-factory name="global"/>
                 </sasl>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -1073,6 +1094,9 @@
                     <response-header name="server-header" header-name="Server" header-value="WildFly/10"/>
                     <response-header name="x-powered-by-header" header-name="X-Powered-By" header-value="Undertow/1"/>
                 </filters>
+                <application-security-domains>
+                    <application-security-domain security-domain="other" http-authentication-factory="application-http-authentication"/>
+                </application-security-domains>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:webservices:2.0">
                 <wsdl-host>${jboss.bind.address:127.0.0.1}</wsdl-host>
@@ -1174,7 +1198,7 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:ejb3:5.0">
                 <session-bean>
-                    <stateful default-access-timeout="5000" cache-ref="distributable" passivation-disabled-cache-ref="simple"/>
+                    <stateful default-access-timeout="5000" cache-ref="simple" passivation-disabled-cache-ref="simple"/>
                     <stateless>
                         <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
                     </stateless>
@@ -1212,7 +1236,9 @@
                     </thread-pool>
                 </thread-pools>
                 <iiop enable-by-default="false" use-qualified-name="false"/>
-                <default-security-domain value="other"/>
+                <security-domains default="ApplicationDomain">
+                    <security-domain name="ApplicationDomain"/>
+                </security-domains>
                 <default-missing-method-permissions-deny-access value="true"/>
                 <log-system-exceptions value="true"/>
             </subsystem>
@@ -1382,7 +1408,7 @@
             <subsystem xmlns="urn:wildfly:elytron:1.0">
                 <security-domains>
                     <security-domain name="ApplicationDomain" default-realm="ApplicationRealm">
-                        <realm name="ApplicationRealm"/>
+                        <realm name="ApplicationRealm" role-decoder="groups-to-roles"/>
                     </security-domain>
                 </security-domains>
                 <security-realms>
@@ -1391,6 +1417,9 @@
                         <groups-properties path="application-roles.properties" relative-to="jboss.domain.config.dir"/>
                     </properties-realm>
                 </security-realms>
+                <mappers>
+                    <simple-role-decoder name="groups-to-roles" attribute="groups"/>
+                </mappers>
                 <http>
                     <http-server-authentication name="application-http-authentication" http-server-factory="global" security-domain="ApplicationDomain">
                         <mechanism-configuration>
@@ -1406,7 +1435,7 @@
                     <provider-sasl-server-factory name="global"/>
                 </sasl>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:security:2.0">
+            <subsystem xmlns="urn:jboss:domain:security:3.0">
                 <security-domains>
                     <security-domain name="other" cache-type="default">
                         <authentication>
@@ -1467,6 +1496,9 @@
                     <response-header name="server-header" header-name="Server" header-value="WildFly/10"/>
                     <response-header name="x-powered-by-header" header-name="X-Powered-By" header-value="Undertow/1"/>
                 </filters>
+                <application-security-domains>
+                    <application-security-domain security-domain="other" http-authentication-factory="application-http-authentication"/>
+                </application-security-domains>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:webservices:2.0">
                 <wsdl-host>${jboss.bind.address:127.0.0.1}</wsdl-host>

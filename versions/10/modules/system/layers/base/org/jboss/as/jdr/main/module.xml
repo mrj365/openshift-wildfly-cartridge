@@ -35,7 +35,7 @@
     </exports>
 
     <resources>
-        <resource-root path="wildfly-jdr-10.0.0.CR5-Elytron3.jar"/>
+        <resource-root path="wildfly-jdr-10.0.0.CR5-Elytron5.jar"/>
         <resource-root path="resources"/>
     </resources>
 

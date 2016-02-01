@@ -31,7 +31,7 @@
     <main-class name="org.jboss.as.cli.CommandLineMain"/>
 
     <resources>
-        <resource-root path="wildfly-cli-2.0.5.Final.jar"/>
+        <resource-root path="wildfly-cli-2.0.10.Final.jar"/>
     </resources>
 
     <dependencies>

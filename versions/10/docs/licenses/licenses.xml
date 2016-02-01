@@ -412,7 +412,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-all</artifactId>
-      <version>4.0.26.Final</version>
+      <version>4.0.32.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -510,7 +510,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-amqp-protocol</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -520,7 +520,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-cli</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -530,7 +530,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-commons</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -540,7 +540,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-core-client</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -550,7 +550,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-dto</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -560,7 +560,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-hornetq-protocol</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -570,7 +570,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-hqclient-protocol</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -580,7 +580,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-jms-client</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -590,7 +590,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-jms-server</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -600,7 +600,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-journal</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -610,7 +610,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-native</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -620,7 +620,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-proton-plug</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -630,7 +630,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-ra</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -640,7 +640,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-selector</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -650,7 +650,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-server</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -660,7 +660,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-service-extensions</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -670,7 +670,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>artemis-stomp-protocol</artifactId>
-      <version>1.1.0.wildfly-010</version>
+      <version>1.1.0.wildfly-011</version>
       <licenses>
         <license>
           <url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -1625,7 +1625,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>5.0.6.Final</version>
+      <version>5.0.7.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -1638,7 +1638,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>5.0.6.Final</version>
+      <version>5.0.7.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -1651,7 +1651,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-envers</artifactId>
-      <version>5.0.6.Final</version>
+      <version>5.0.7.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -1664,7 +1664,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-infinispan</artifactId>
-      <version>5.0.6.Final</version>
+      <version>5.0.7.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -1677,7 +1677,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-java8</artifactId>
-      <version>5.0.6.Final</version>
+      <version>5.0.7.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -1750,7 +1750,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>5.2.2.Final</version>
+      <version>5.2.3.Final</version>
       <licenses>
         <license>
           <name>Apache Software License, Version 2.0</name>
@@ -1761,7 +1761,7 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator-cdi</artifactId>
-      <version>5.2.2.Final</version>
+      <version>5.2.3.Final</version>
       <licenses>
         <license>
           <name>Apache Software License, Version 2.0</name>
@@ -1958,7 +1958,7 @@
     <dependency>
       <groupId>org.jboss</groupId>
       <artifactId>jboss-ejb-client</artifactId>
-      <version>2.1.3.Final</version>
+      <version>2.1.4.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2026,7 +2026,7 @@
     <dependency>
       <groupId>org.jboss.hal</groupId>
       <artifactId>release-stream</artifactId>
-      <version>2.8.16.Final</version>
+      <version>2.8.19.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -2037,7 +2037,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-common-api</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2048,7 +2048,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-common-impl</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2059,7 +2059,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-common-spi</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2070,7 +2070,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-core-api</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2081,7 +2081,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-core-impl</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2092,7 +2092,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-deployers-common</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2103,7 +2103,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-jdbc</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2114,7 +2114,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-spec-api</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2125,7 +2125,7 @@
     <dependency>
       <groupId>org.jboss.ironjacamar</groupId>
       <artifactId>ironjacamar-validator</artifactId>
-      <version>1.3.1.Final</version>
+      <version>1.3.2.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2180,7 +2180,7 @@
     <dependency>
       <groupId>org.jboss.narayana</groupId>
       <artifactId>jbosstxbridge</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2191,7 +2191,7 @@
     <dependency>
       <groupId>org.jboss.narayana.compensations</groupId>
       <artifactId>compensations</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2202,7 +2202,7 @@
     <dependency>
       <groupId>org.jboss.narayana.jts</groupId>
       <artifactId>narayana-jts-idlj</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2213,7 +2213,7 @@
     <dependency>
       <groupId>org.jboss.narayana.jts</groupId>
       <artifactId>narayana-jts-integration</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2224,7 +2224,7 @@
     <dependency>
       <groupId>org.jboss.narayana.rts</groupId>
       <artifactId>restat-api</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2235,7 +2235,7 @@
     <dependency>
       <groupId>org.jboss.narayana.rts</groupId>
       <artifactId>restat-bridge</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2246,7 +2246,7 @@
     <dependency>
       <groupId>org.jboss.narayana.rts</groupId>
       <artifactId>restat-integration</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2257,7 +2257,7 @@
     <dependency>
       <groupId>org.jboss.narayana.rts</groupId>
       <artifactId>restat-util</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2268,7 +2268,7 @@
     <dependency>
       <groupId>org.jboss.narayana.txframework</groupId>
       <artifactId>txframework</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>LGPL 2.1</name>
@@ -2279,7 +2279,7 @@
     <dependency>
       <groupId>org.jboss.narayana.xts</groupId>
       <artifactId>jbossxts</artifactId>
-      <version>5.2.9.Final</version>
+      <version>5.2.12.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2786,7 +2786,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-client</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2797,7 +2797,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-factories</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2808,7 +2808,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-jaspi</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -2819,7 +2819,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-resources</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2830,7 +2830,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-server</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -2841,7 +2841,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-transports-udp</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -2852,7 +2852,7 @@
     <dependency>
       <groupId>org.jboss.ws.cxf</groupId>
       <artifactId>jbossws-cxf-transports-undertow</artifactId>
-      <version>5.1.2.Final</version>
+      <version>5.1.3.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3220,7 +3220,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>jipijapa-eclipselink</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3231,7 +3231,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>jipijapa-hibernate4-1</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3242,7 +3242,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>jipijapa-hibernate4-3</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3253,7 +3253,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>jipijapa-hibernate5</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3265,7 +3265,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>jipijapa-openjpa</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3276,7 +3276,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>jipijapa-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3287,7 +3287,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-appclient</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3299,7 +3299,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-batch</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3311,7 +3311,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-batch-jberet</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3323,7 +3323,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-bean-validation</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3335,7 +3335,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-client-all</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3347,7 +3347,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-api</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3359,7 +3359,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-common</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3371,7 +3371,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-ee-infinispan</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3383,7 +3383,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-ee-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3395,7 +3395,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-ejb-infinispan</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3407,7 +3407,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-ejb-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3419,7 +3419,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-infinispan-extension</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3431,7 +3431,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-infinispan-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3443,7 +3443,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-jgroups-api</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3455,7 +3455,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-jgroups-extension</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3467,7 +3467,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-jgroups-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3479,7 +3479,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-marshalling-api</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3491,7 +3491,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-marshalling-jboss</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3503,7 +3503,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-server</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3515,7 +3515,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-service</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3527,7 +3527,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-singleton-api</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3539,7 +3539,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-singleton-extension</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3551,7 +3551,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3563,7 +3563,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-web-api</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3575,7 +3575,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-web-infinispan</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3587,7 +3587,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-web-spi</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3599,7 +3599,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-clustering-web-undertow</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3611,7 +3611,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-cmp</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3623,7 +3623,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-configadmin</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3635,7 +3635,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-connector</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3647,7 +3647,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-ejb3</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3659,7 +3659,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-iiop-openjdk</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3671,7 +3671,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jacorb</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3683,7 +3683,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jaxr</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3695,7 +3695,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jaxrs</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3707,7 +3707,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jberet</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3719,7 +3719,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jdr</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3731,7 +3731,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jpa</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3743,7 +3743,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jsf</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3755,7 +3755,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jsf-injection</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3767,7 +3767,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-jsr77</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3779,7 +3779,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-mail</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3791,7 +3791,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-messaging</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3803,7 +3803,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-messaging-activemq</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3815,7 +3815,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-mod_cluster-extension</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3827,7 +3827,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-mod_cluster-undertow</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3839,7 +3839,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-picketlink</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3851,7 +3851,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-pojo</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3863,7 +3863,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-rts</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3875,7 +3875,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-sar</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3887,7 +3887,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-security-api</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3899,7 +3899,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-servlet-feature-pack</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3911,7 +3911,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-system-jmx</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -3923,7 +3923,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-transactions</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3935,7 +3935,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-web</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3947,7 +3947,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-webservices-server-integration</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3959,7 +3959,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-weld</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3971,7 +3971,7 @@
     <dependency>
       <groupId>org.wildfly</groupId>
       <artifactId>wildfly-xts</artifactId>
-      <version>10.0.0.CR5</version>
+      <version>10.0.0.Final</version>
       <licenses>
         <license>
           <name>GNU Lesser General Public License, Version 2.1</name>
@@ -3995,7 +3995,7 @@
     <dependency>
       <groupId>org.wildfly.core</groupId>
       <artifactId>wildfly-cli</artifactId>
-      <version>2.0.5.Final</version>
+      <version>2.0.10.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>
@@ -4007,7 +4007,7 @@
     <dependency>
       <groupId>org.wildfly.core</groupId>
       <artifactId>wildfly-version</artifactId>
-      <version>2.0.5.Final</version>
+      <version>2.0.10.Final</version>
       <licenses>
         <license>
           <name>lgpl</name>

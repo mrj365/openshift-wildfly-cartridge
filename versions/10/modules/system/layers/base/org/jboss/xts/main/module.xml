@@ -25,8 +25,8 @@
 <module xmlns="urn:jboss:module:1.3" name="org.jboss.xts">
 
     <resources>
-        <resource-root path="jbossxts-5.2.9.Final.jar"/>
-        <resource-root path="jbosstxbridge-5.2.9.Final.jar"/>
+        <resource-root path="jbossxts-5.2.12.Final.jar"/>
+        <resource-root path="jbosstxbridge-5.2.12.Final.jar"/>
     </resources>
 
     <dependencies>
@@ -65,5 +65,11 @@
         <module name="javax.annotation.api"  export="true" />
         <module name="javax.interceptor.api"  export="true" />
         <module name="org.jboss.weld.spi" />
+
+        <!-- TODO WFLY-5966 validate the need for these and remove if not needed.
+             Prior to WFLY-5922 they were exported by javax.ejb.api. -->
+        <module name="javax.xml.rpc.api"/>
+        <module name="javax.rmi.api"/>
+        <module name="org.omg.api"/>
     </dependencies>
 </module>

@@ -33,7 +33,7 @@
     </exports>
 
     <resources>
-        <resource-root path="wildfly-domain-management-2.0.5.Final.jar"/>
+        <resource-root path="wildfly-domain-management-2.0.10.Final.jar"/>
     </resources>
 
     <dependencies>

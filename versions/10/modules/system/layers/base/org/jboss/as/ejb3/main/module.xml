@@ -26,7 +26,7 @@
     </properties>
 
     <resources>
-        <resource-root path="wildfly-ejb3-10.0.0.CR5.jar"/>
+        <resource-root path="wildfly-ejb3-10.0.0.Final.jar"/>
         <resource-root path="timers" />
     </resources>
 
@@ -104,5 +104,11 @@
 
         <module name="org.omg.api"/>
         <module name="org.picketbox"/>
+        <module name="javax.xml.rpc.api"/>
+
+        <!-- TODO WFLY-5966 validate the need for these and remove if not needed.
+             Prior to WFLY-5922 they were exported by javax.ejb.api. -->
+        <module name="javax.transaction.api"/>
+        <module name="javax.rmi.api"/>
     </dependencies>
 </module>

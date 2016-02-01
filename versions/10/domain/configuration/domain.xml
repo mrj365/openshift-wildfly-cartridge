@@ -138,10 +138,10 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:ejb3:4.0">
                 <session-bean>
-                    <stateful default-access-timeout="5000" cache-ref="simple" passivation-disabled-cache-ref="simple"/>
                     <stateless>
                         <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
                     </stateless>
+                    <stateful default-access-timeout="5000" cache-ref="simple" passivation-disabled-cache-ref="simple"/>
                     <singleton default-access-timeout="5000"/>
                 </session-bean>
                 <pools>
@@ -153,7 +153,7 @@
                 </pools>
                 <caches>
                     <cache name="simple"/>
-                    <cache name="distributable" aliases="passivating clustered" passivation-store-ref="infinispan"/>
+                    <cache name="distributable" passivation-store-ref="infinispan" aliases="passivating clustered"/>
                 </caches>
                 <passivation-stores>
                     <passivation-store name="infinispan" cache-container="ejb" max-size="10000"/>
@@ -211,11 +211,6 @@
                 </cache-container>
                 <cache-container name="hibernate" default-cache="local-query" module="org.hibernate.infinispan">
                     <local-cache name="entity">
-                        <transaction mode="NON_XA"/>
-                        <eviction strategy="LRU" max-entries="10000"/>
-                        <expiration max-idle="100000"/>
-                    </local-cache>
-                    <local-cache name="immutable-entity">
                         <transaction mode="NON_XA"/>
                         <eviction strategy="LRU" max-entries="10000"/>
                         <expiration max-idle="100000"/>
@@ -442,10 +437,10 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:ejb3:4.0">
                 <session-bean>
-                    <stateful default-access-timeout="5000" cache-ref="distributable" passivation-disabled-cache-ref="simple"/>
                     <stateless>
                         <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
                     </stateless>
+                    <stateful default-access-timeout="5000" cache-ref="distributable" passivation-disabled-cache-ref="simple"/>
                     <singleton default-access-timeout="5000"/>
                 </session-bean>
                 <pools>
@@ -457,7 +452,7 @@
                 </pools>
                 <caches>
                     <cache name="simple"/>
-                    <cache name="distributable" aliases="passivating clustered" passivation-store-ref="infinispan"/>
+                    <cache name="distributable" passivation-store-ref="infinispan" aliases="passivating clustered"/>
                 </caches>
                 <passivation-stores>
                     <passivation-store name="infinispan" cache-container="ejb" max-size="10000"/>
@@ -508,15 +503,15 @@
                 </cache-container>
                 <cache-container name="hibernate" default-cache="local-query" module="org.hibernate.infinispan">
                     <transport lock-timeout="60000"/>
+                    <local-cache name="local-query">
+                        <eviction strategy="LRU" max-entries="10000"/>
+                        <expiration max-idle="100000"/>
+                    </local-cache>
                     <invalidation-cache name="entity" mode="SYNC">
                         <transaction mode="NON_XA"/>
                         <eviction strategy="LRU" max-entries="10000"/>
                         <expiration max-idle="100000"/>
                     </invalidation-cache>
-                    <local-cache name="local-query">
-                        <eviction strategy="LRU" max-entries="10000"/>
-                        <expiration max-idle="100000"/>
-                    </local-cache>
                     <replicated-cache name="timestamps" mode="ASYNC"/>
                 </cache-container>
             </subsystem>
@@ -786,10 +781,10 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:ejb3:4.0">
                 <session-bean>
-                    <stateful default-access-timeout="5000" cache-ref="simple" passivation-disabled-cache-ref="simple"/>
                     <stateless>
                         <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
                     </stateless>
+                    <stateful default-access-timeout="5000" cache-ref="simple" passivation-disabled-cache-ref="simple"/>
                     <singleton default-access-timeout="5000"/>
                 </session-bean>
                 <mdb>
@@ -805,7 +800,7 @@
                 </pools>
                 <caches>
                     <cache name="simple"/>
-                    <cache name="distributable" aliases="passivating clustered" passivation-store-ref="infinispan"/>
+                    <cache name="distributable" passivation-store-ref="infinispan" aliases="passivating clustered"/>
                 </caches>
                 <passivation-stores>
                     <passivation-store name="infinispan" cache-container="ejb" max-size="10000"/>
@@ -864,11 +859,6 @@
                 </cache-container>
                 <cache-container name="hibernate" default-cache="local-query" module="org.hibernate.infinispan">
                     <local-cache name="entity">
-                        <transaction mode="NON_XA"/>
-                        <eviction strategy="LRU" max-entries="10000"/>
-                        <expiration max-idle="100000"/>
-                    </local-cache>
-                    <local-cache name="immutable-entity">
                         <transaction mode="NON_XA"/>
                         <eviction strategy="LRU" max-entries="10000"/>
                         <expiration max-idle="100000"/>
@@ -1124,10 +1114,10 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:ejb3:4.0">
                 <session-bean>
-                    <stateful default-access-timeout="5000" cache-ref="distributable" passivation-disabled-cache-ref="simple"/>
                     <stateless>
                         <bean-instance-pool-ref pool-name="slsb-strict-max-pool"/>
                     </stateless>
+                    <stateful default-access-timeout="5000" cache-ref="distributable" passivation-disabled-cache-ref="simple"/>
                     <singleton default-access-timeout="5000"/>
                 </session-bean>
                 <mdb>
@@ -1143,7 +1133,7 @@
                 </pools>
                 <caches>
                     <cache name="simple"/>
-                    <cache name="distributable" aliases="passivating clustered" passivation-store-ref="infinispan"/>
+                    <cache name="distributable" passivation-store-ref="infinispan" aliases="passivating clustered"/>
                 </caches>
                 <passivation-stores>
                     <passivation-store name="infinispan" cache-container="ejb" max-size="10000"/>
@@ -1195,15 +1185,15 @@
                 </cache-container>
                 <cache-container name="hibernate" default-cache="local-query" module="org.hibernate.infinispan">
                     <transport lock-timeout="60000"/>
+                    <local-cache name="local-query">
+                        <eviction strategy="LRU" max-entries="10000"/>
+                        <expiration max-idle="100000"/>
+                    </local-cache>
                     <invalidation-cache name="entity" mode="SYNC">
                         <transaction mode="NON_XA"/>
                         <eviction strategy="LRU" max-entries="10000"/>
                         <expiration max-idle="100000"/>
                     </invalidation-cache>
-                    <local-cache name="local-query">
-                        <eviction strategy="LRU" max-entries="10000"/>
-                        <expiration max-idle="100000"/>
-                    </local-cache>
                     <replicated-cache name="timestamps" mode="ASYNC"/>
                 </cache-container>
             </subsystem>

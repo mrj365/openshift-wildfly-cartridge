@@ -29,7 +29,7 @@
     </properties>
 
     <resources>
-        <resource-root path="jose-jwt-3.0.14.Final.jar"/>
+        <resource-root path="jose-jwt-3.0.18.Final.jar"/>
     </resources>
 
     <dependencies>

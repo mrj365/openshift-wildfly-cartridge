@@ -29,7 +29,7 @@
     </properties>
 
     <resources>
-            <resource-root path="picketlink-config-2.5.5.SP1.jar"/>
+            <resource-root path="picketlink-config-2.5.5.SP2.jar"/>
     </resources>
 
     <dependencies>

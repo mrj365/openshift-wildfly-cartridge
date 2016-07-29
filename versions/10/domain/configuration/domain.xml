@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<domain xmlns="urn:jboss:domain:4.0">
+<domain xmlns="urn:jboss:domain:4.2">
     <extensions>
         <extension module="org.jboss.as.clustering.infinispan"/>
         <extension module="org.jboss.as.clustering.jgroups"/>
@@ -146,7 +146,6 @@
                 </session-bean>
                 <pools>
                     <bean-instance-pools>
-                        <!-- Automatically configure pools. Alternatively, max-pool-size can be set to a specific value -->
                         <strict-max-pool name="slsb-strict-max-pool" derive-size="from-worker-pools" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                         <strict-max-pool name="mdb-strict-max-pool" derive-size="from-cpu-count" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                     </bean-instance-pools>
@@ -195,6 +194,9 @@
                         <locking isolation="REPEATABLE_READ"/>
                         <transaction mode="BATCH"/>
                         <file-store passivation="false" purge="false"/>
+                    </local-cache>
+                    <local-cache name="concurrent">
+                        <file-store passivation="true" purge="false"/>
                     </local-cache>
                 </cache-container>
                 <cache-container name="ejb" aliases="sfsb" default-cache="passivation" module="org.wildfly.clustering.ejb.infinispan">
@@ -315,10 +317,11 @@
                 </core-environment>
                 <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:undertow:3.0">
+            <subsystem xmlns="urn:jboss:domain:undertow:3.1">
                 <buffer-cache name="default"/>
                 <server name="default-server">
-                    <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+                    <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
+                    <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true"/>
                     <host name="default-host" alias="localhost">
                         <location name="/" handler="welcome-content"/>
                         <filter-ref name="server-header"/>
@@ -445,7 +448,6 @@
                 </session-bean>
                 <pools>
                     <bean-instance-pools>
-                        <!-- Automatically configure pools. Alternatively, max-pool-size can be set to a specific value -->
                         <strict-max-pool name="slsb-strict-max-pool" derive-size="from-worker-pools" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                         <strict-max-pool name="mdb-strict-max-pool" derive-size="from-cpu-count" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                     </bean-instance-pools>
@@ -490,6 +492,9 @@
                     <distributed-cache name="dist" mode="ASYNC" l1-lifespan="0" owners="2">
                         <locking isolation="REPEATABLE_READ"/>
                         <transaction mode="BATCH"/>
+                        <file-store/>
+                    </distributed-cache>
+                    <distributed-cache name="concurrent" mode="SYNC" l1-lifespan="0" owners="2">
                         <file-store/>
                     </distributed-cache>
                 </cache-container>
@@ -658,11 +663,12 @@
                 </core-environment>
                 <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:undertow:3.0">
+            <subsystem xmlns="urn:jboss:domain:undertow:3.1">
                 <buffer-cache name="default"/>
                 <server name="default-server">
                     <ajp-listener name="ajp" socket-binding="ajp"/>
-                    <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+                    <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
+                    <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true"/>
                     <host name="default-host" alias="localhost">
                         <location name="/" handler="welcome-content"/>
                         <filter-ref name="server-header"/>
@@ -793,7 +799,6 @@
                 </mdb>
                 <pools>
                     <bean-instance-pools>
-                        <!-- Automatically configure pools. Alternatively, max-pool-size can be set to a specific value -->
                         <strict-max-pool name="slsb-strict-max-pool" derive-size="from-worker-pools" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                         <strict-max-pool name="mdb-strict-max-pool" derive-size="from-cpu-count" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                     </bean-instance-pools>
@@ -844,6 +849,9 @@
                         <transaction mode="BATCH"/>
                         <file-store passivation="false" purge="false"/>
                     </local-cache>
+                    <local-cache name="concurrent">
+                        <file-store passivation="true" purge="false"/>
+                    </local-cache>
                 </cache-container>
                 <cache-container name="ejb" aliases="sfsb" default-cache="passivation" module="org.wildfly.clustering.ejb.infinispan">
                     <local-cache name="passivation">
@@ -872,7 +880,7 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:iiop-openjdk:1.0">
                 <orb socket-binding="iiop" ssl-socket-binding="iiop-ssl"/>
-                <initializers transactions="spec" security="identity"/>
+                <initializers security="identity" transactions="spec"/>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:jaxrs:1.0"/>
             <subsystem xmlns="urn:jboss:domain:jca:4.0">
@@ -929,9 +937,9 @@
                     <in-vm-acceptor name="in-vm" server-id="0"/>
                     <jms-queue name="ExpiryQueue" entries="java:/jms/queue/ExpiryQueue"/>
                     <jms-queue name="DLQ" entries="java:/jms/queue/DLQ"/>
-                    <connection-factory name="InVmConnectionFactory" connectors="in-vm" entries="java:/ConnectionFactory"/>
+                    <connection-factory name="InVmConnectionFactory" entries="java:/ConnectionFactory" connectors="in-vm"/>
                     <connection-factory name="RemoteConnectionFactory" connectors="http-connector" entries="java:jboss/exported/jms/RemoteConnectionFactory"/>
-                    <pooled-connection-factory name="activemq-ra" transaction="xa" connectors="in-vm" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory"/>
+                    <pooled-connection-factory name="activemq-ra" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory" connectors="in-vm" transaction="xa"/>
                 </server>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:naming:2.0">
@@ -992,10 +1000,11 @@
                 </core-environment>
                 <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:undertow:3.0">
+            <subsystem xmlns="urn:jboss:domain:undertow:3.1">
                 <buffer-cache name="default"/>
                 <server name="default-server">
-                    <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+                    <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
+                    <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true"/>
                     <host name="default-host" alias="localhost">
                         <location name="/" handler="welcome-content"/>
                         <filter-ref name="server-header"/>
@@ -1126,7 +1135,6 @@
                 </mdb>
                 <pools>
                     <bean-instance-pools>
-                        <!-- Automatically configure pools. Alternatively, max-pool-size can be set to a specific value -->
                         <strict-max-pool name="slsb-strict-max-pool" derive-size="from-worker-pools" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                         <strict-max-pool name="mdb-strict-max-pool" derive-size="from-cpu-count" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                     </bean-instance-pools>
@@ -1174,6 +1182,9 @@
                         <transaction mode="BATCH"/>
                         <file-store/>
                     </distributed-cache>
+                    <distributed-cache name="concurrent" mode="SYNC" l1-lifespan="0" owners="2">
+                        <file-store/>
+                    </distributed-cache>
                 </cache-container>
                 <cache-container name="ejb" aliases="sfsb" default-cache="dist" module="org.wildfly.clustering.ejb.infinispan">
                     <transport lock-timeout="60000"/>
@@ -1199,7 +1210,7 @@
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:iiop-openjdk:1.0">
                 <orb socket-binding="iiop" ssl-socket-binding="iiop-ssl"/>
-                <initializers transactions="spec" security="identity"/>
+                <initializers security="identity" transactions="spec"/>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:jaxrs:1.0"/>
             <subsystem xmlns="urn:jboss:domain:jca:4.0">
@@ -1291,14 +1302,14 @@
                         <param name="direct-deliver" value="false"/>
                     </http-acceptor>
                     <in-vm-acceptor name="in-vm" server-id="0"/>
-                    <broadcast-group name="bg-group1" connectors="http-connector" jgroups-channel="activemq-cluster"/>
+                    <broadcast-group name="bg-group1" jgroups-channel="activemq-cluster" connectors="http-connector"/>
                     <discovery-group name="dg-group1" jgroups-channel="activemq-cluster"/>
                     <cluster-connection name="my-cluster" address="jms" connector-name="http-connector" discovery-group="dg-group1"/>
                     <jms-queue name="ExpiryQueue" entries="java:/jms/queue/ExpiryQueue"/>
                     <jms-queue name="DLQ" entries="java:/jms/queue/DLQ"/>
-                    <connection-factory name="InVmConnectionFactory" connectors="in-vm" entries="java:/ConnectionFactory"/>
-                    <connection-factory name="RemoteConnectionFactory" ha="true" block-on-acknowledge="true" reconnect-attempts="-1" connectors="http-connector" entries="java:jboss/exported/jms/RemoteConnectionFactory"/>
-                    <pooled-connection-factory name="activemq-ra" transaction="xa" connectors="in-vm" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory"/>
+                    <connection-factory name="InVmConnectionFactory" entries="java:/ConnectionFactory" connectors="in-vm"/>
+                    <connection-factory name="RemoteConnectionFactory" entries="java:jboss/exported/jms/RemoteConnectionFactory" connectors="http-connector" ha="true" block-on-acknowledge="true" reconnect-attempts="-1"/>
+                    <pooled-connection-factory name="activemq-ra" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory" connectors="in-vm" transaction="xa"/>
                 </server>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:modcluster:2.0">
@@ -1373,11 +1384,12 @@
                 </core-environment>
                 <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
             </subsystem>
-            <subsystem xmlns="urn:jboss:domain:undertow:3.0">
+            <subsystem xmlns="urn:jboss:domain:undertow:3.1">
                 <buffer-cache name="default"/>
                 <server name="default-server">
                     <ajp-listener name="ajp" socket-binding="ajp"/>
-                    <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+                    <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
+                    <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true"/>
                     <host name="default-host" alias="localhost">
                         <location name="/" handler="welcome-content"/>
                         <filter-ref name="server-header"/>
@@ -1407,6 +1419,64 @@
                 <client-config name="Standard-Client-Config"/>
             </subsystem>
             <subsystem xmlns="urn:jboss:domain:weld:3.0"/>
+        </profile>
+        <profile name="load-balancer">
+            <subsystem xmlns="urn:jboss:domain:logging:3.0">
+                <console-handler name="CONSOLE">
+                    <level name="INFO"/>
+                    <formatter>
+                        <named-formatter name="COLOR-PATTERN"/>
+                    </formatter>
+                </console-handler>
+                <periodic-rotating-file-handler name="FILE" autoflush="true">
+                    <formatter>
+                        <named-formatter name="PATTERN"/>
+                    </formatter>
+                    <file relative-to="jboss.server.log.dir" path="server.log"/>
+                    <suffix value=".yyyy-MM-dd"/>
+                    <append value="true"/>
+                </periodic-rotating-file-handler>
+                <logger category="com.arjuna">
+                    <level name="WARN"/>
+                </logger>
+                <logger category="org.jboss.as.config">
+                    <level name="DEBUG"/>
+                </logger>
+                <logger category="sun.rmi">
+                    <level name="WARN"/>
+                </logger>
+                <root-logger>
+                    <level name="INFO"/>
+                    <handlers>
+                        <handler name="CONSOLE"/>
+                        <handler name="FILE"/>
+                    </handlers>
+                </root-logger>
+                <formatter name="PATTERN">
+                    <pattern-formatter pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n"/>
+                </formatter>
+                <formatter name="COLOR-PATTERN">
+                    <pattern-formatter pattern="%K{level}%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n"/>
+                </formatter>
+            </subsystem>
+            <subsystem xmlns="urn:jboss:domain:io:1.1">
+                <worker name="default"/>
+                <buffer-pool name="default"/>
+            </subsystem>
+            <subsystem xmlns="urn:jboss:domain:undertow:3.1">
+                <buffer-cache name="default"/>
+                <server name="default-server">
+                    <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
+                    <http-listener name="management" socket-binding="mcmp-management" enable-http2="true"/>
+                    <host name="default-host" alias="localhost">
+                        <filter-ref name="load-balancer"/>
+                    </host>
+                </server>
+                <servlet-container name="default"/>
+                <filters>
+                    <mod-cluster name="load-balancer" management-socket-binding="mcmp-management" advertise-socket-binding="modcluster" enable-http2="true"/>
+                </filters>
+            </subsystem>
         </profile>
     </profiles>
     <!--
@@ -1488,6 +1558,13 @@
             <outbound-socket-binding name="mail-smtp">
                 <remote-destination host="localhost" port="25"/>
             </outbound-socket-binding>
+        </socket-binding-group>
+        <socket-binding-group name="load-balancer-sockets" default-interface="public">
+            <!-- Needed for server groups using the 'load-balancer' profile  -->
+            <socket-binding name="http" port="${jboss.http.port:8080}"/>
+            <socket-binding name="https" port="${jboss.https.port:8443}"/>
+            <socket-binding name="mcmp-management" interface="private" port="${jboss.mcmp.port:8090}"/>
+            <socket-binding name="modcluster" interface="private" multicast-port="23364" multicast-address="224.0.1.105"/>
         </socket-binding-group>
     </socket-binding-groups>
     <server-groups>

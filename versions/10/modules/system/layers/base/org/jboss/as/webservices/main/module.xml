@@ -32,8 +32,8 @@
     </exports>
 
     <resources>
-        <resource-root path="wildfly-webservices-server-integration-10.0.0.Final.jar"/>
-        <resource-root path="jbossws-cxf-resources-5.1.3.Final-wildfly1000.jar"/>
+        <resource-root path="wildfly-webservices-server-integration-10.1.0.CR1.jar"/>
+        <resource-root path="jbossws-cxf-resources-5.1.5.Final-wildfly1000.jar"/>
     </resources>
 
     <dependencies>

@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="ecj-4.4.2.jar"/>
+        <resource-root path="ecj-4.5.1.jar"/>
     </resources>
 
 </module>

@@ -35,7 +35,7 @@
     <main-class name="org.jboss.as.appclient.subsystem.Main"/>
 
     <resources>
-        <resource-root path="wildfly-appclient-10.0.0.Final.jar"/>
+        <resource-root path="wildfly-appclient-10.1.0.CR1.jar"/>
     </resources>
 
     <dependencies>
@@ -44,7 +44,6 @@
         <module name="org.apache.xerces" services="import"/>
         <module name="org.codehaus.woodstox" services="import"/>
         <module name="org.jboss.as.server" export="true"/>
-        <module name="javax.api"/>
         <module name="org.jboss.dmr"/>
         <module name="org.jboss.ejb-client"/>
         <module name="org.jboss.invocation"/>

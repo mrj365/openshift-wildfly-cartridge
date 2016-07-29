@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="netty-all-4.0.32.Final.jar"/>
+        <resource-root path="netty-all-4.0.33.Final.jar"/>
     </resources>
 
     <dependencies>

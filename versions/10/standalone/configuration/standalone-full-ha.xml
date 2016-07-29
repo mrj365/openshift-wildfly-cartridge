@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<server xmlns="urn:jboss:domain:4.0">
+<server xmlns="urn:jboss:domain:4.2">
     <extensions>
         <extension module="org.jboss.as.clustering.infinispan"/>
         <extension module="org.jboss.as.clustering.jgroups"/>
@@ -47,6 +47,11 @@
                 </authorization>
             </security-realm>
             <security-realm name="ApplicationRealm">
+                <server-identities>
+                    <ssl>
+                        <keystore path="application.keystore" relative-to="jboss.server.config.dir" keystore-password="password" alias="server" key-password="password" generate-self-signed-certificate-host="localhost"/>
+                    </ssl>
+                </server-identities>
                 <authentication>
                     <local default-user="$local" allowed-users="*" skip-group-loading="true"/>
                     <properties path="application-users.properties" relative-to="jboss.server.config.dir"/>
@@ -187,7 +192,6 @@
             </mdb>
             <pools>
                 <bean-instance-pools>
-                    <!-- Automatically configure pools. Alternatively, max-pool-size can be set to a specific value -->
                     <strict-max-pool name="slsb-strict-max-pool" derive-size="from-worker-pools" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                     <strict-max-pool name="mdb-strict-max-pool" derive-size="from-cpu-count" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                 </bean-instance-pools>
@@ -235,6 +239,9 @@
                     <transaction mode="BATCH"/>
                     <file-store/>
                 </distributed-cache>
+                <distributed-cache name="concurrent" mode="SYNC" l1-lifespan="0" owners="2">
+                    <file-store/>
+                </distributed-cache>
             </cache-container>
             <cache-container name="ejb" aliases="sfsb" default-cache="dist" module="org.wildfly.clustering.ejb.infinispan">
                 <transport lock-timeout="60000"/>
@@ -260,7 +267,7 @@
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:iiop-openjdk:1.0">
             <orb socket-binding="iiop" ssl-socket-binding="iiop-ssl"/>
-            <initializers transactions="spec" security="identity"/>
+            <initializers security="identity" transactions="spec"/>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:jaxrs:1.0"/>
         <subsystem xmlns="urn:jboss:domain:jca:4.0">
@@ -352,14 +359,14 @@
                     <param name="direct-deliver" value="false"/>
                 </http-acceptor>
                 <in-vm-acceptor name="in-vm" server-id="0"/>
-                <broadcast-group name="bg-group1" connectors="http-connector" jgroups-channel="activemq-cluster"/>
+                <broadcast-group name="bg-group1" jgroups-channel="activemq-cluster" connectors="http-connector"/>
                 <discovery-group name="dg-group1" jgroups-channel="activemq-cluster"/>
                 <cluster-connection name="my-cluster" address="jms" connector-name="http-connector" discovery-group="dg-group1"/>
                 <jms-queue name="ExpiryQueue" entries="java:/jms/queue/ExpiryQueue"/>
                 <jms-queue name="DLQ" entries="java:/jms/queue/DLQ"/>
-                <connection-factory name="InVmConnectionFactory" connectors="in-vm" entries="java:/ConnectionFactory"/>
-                <connection-factory name="RemoteConnectionFactory" ha="true" block-on-acknowledge="true" reconnect-attempts="-1" connectors="http-connector" entries="java:jboss/exported/jms/RemoteConnectionFactory"/>
-                <pooled-connection-factory name="activemq-ra" transaction="xa" connectors="in-vm" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory"/>
+                <connection-factory name="InVmConnectionFactory" entries="java:/ConnectionFactory" connectors="in-vm"/>
+                <connection-factory name="RemoteConnectionFactory" entries="java:jboss/exported/jms/RemoteConnectionFactory" connectors="http-connector" ha="true" block-on-acknowledge="true" reconnect-attempts="-1"/>
+                <pooled-connection-factory name="activemq-ra" entries="java:/JmsXA java:jboss/DefaultJMSConnectionFactory" connectors="in-vm" transaction="xa"/>
             </server>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:modcluster:2.0">
@@ -434,11 +441,12 @@
             </core-environment>
             <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
         </subsystem>
-        <subsystem xmlns="urn:jboss:domain:undertow:3.0">
+        <subsystem xmlns="urn:jboss:domain:undertow:3.1">
             <buffer-cache name="default"/>
             <server name="default-server">
                 <ajp-listener name="ajp" socket-binding="ajp"/>
-                <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+                <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true"/>
+                <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true"/>
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
                     <filter-ref name="server-header"/>

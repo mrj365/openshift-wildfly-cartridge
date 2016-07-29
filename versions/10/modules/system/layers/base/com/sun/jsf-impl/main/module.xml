@@ -45,6 +45,6 @@
     </dependencies>
 
     <resources>
-        <resource-root path="jsf-impl-2.2.12-jbossorg-2.jar"/>
+        <resource-root path="jsf-impl-2.2.13.SP1.jar"/>
     </resources>
 </module>

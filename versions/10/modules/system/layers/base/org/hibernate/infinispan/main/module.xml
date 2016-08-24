@@ -30,7 +30,7 @@
 
 
     <resources>
-        <resource-root path="hibernate-infinispan-5.0.9.Final.jar"/>
+        <resource-root path="hibernate-infinispan-5.0.10.Final.jar"/>
     </resources>
 
     <dependencies>

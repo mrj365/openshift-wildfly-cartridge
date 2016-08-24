@@ -30,7 +30,7 @@
 
 
     <resources>
-        <resource-root path="resteasy-jettison-provider-3.0.18.Final.jar"/>
+        <resource-root path="resteasy-jettison-provider-3.0.19.Final.jar"/>
     </resources>
 
     <dependencies>

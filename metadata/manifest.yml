@@ -104,7 +104,7 @@ Endpoints:
     Private-Port: 9990
   - Private-IP-Name:   IP
     Private-Port-Name: HAZELCAST_PORT
-    Private-Port:      5701
+    Private-Port:      15007
     Public-Port-Name:  HAZELCAST_PROXY_PORT
 Additional-Control-Actions:
     - threaddump

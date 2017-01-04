@@ -104,7 +104,11 @@ Endpoints:
     Private-Port: 9990
   - Private-IP-Name:   IP
     Private-Port-Name: HAZELCAST_PORT
-    Private-Port:      15007
+    Private-Port:      5701
     Public-Port-Name:  HAZELCAST_PROXY_PORT
+  - Private-IP-Name:   IP
+    Private-Port-Name: CLOUD_CONFIG_PORT
+    Private-Port:      8888
+    Public-Port-Name:  CLOUD_CONFIG_PROXY_PORT
 Additional-Control-Actions:
     - threaddump
